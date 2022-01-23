@@ -5,17 +5,21 @@ class QuizBrain {
 
   //TODO 1: ปรับเปลี่ยนหรือเพิ่มชุดคำถามใน questionBank ให้มีอย่างน้อย 5 คำถาม
   List<Question> _questionBank=[
-    Question(q: '1 + 1 = 2', a: true),
-    Question(q: 'น้ำเงิน+เขียว = ส้ม', a: false),
-    Question(q: '1 + 1 = 3', a: false),
+    Question(q: '1 - 1 = 2', a: false),
+    Question(q: 'ทุเรียนเป็นผลไม้', a: true),
+    Question(q: 'ดอกไม้ทะเลเป็นสัตว์', a: true),
+    Question(q: 'KFC มีขายในประเทศไทย', a: true),
+    Question(q: 'ธงชาติไทยมี 4 สี', a: false)
   ];
 
   void nextQuestion() {
-    if (_questionNumber < _questionBank.length-1) {
+    if (_questionNumber < _questionBank.length) {
       _questionNumber++;
     }
   }
-
+  int getQuestionNumber() {
+    return _questionNumber;
+  }
   String? getQuestionText() {
     return _questionBank[_questionNumber].questionText;
   }
@@ -25,7 +29,7 @@ class QuizBrain {
   }
 
   bool isFinished() {
-    if (_questionNumber >= _questionBank.length - 1) {
+    if (_questionNumber >= _questionBank.length) {
       return true;
     } else {
       return false;

@@ -37,7 +37,7 @@ dependencies:
 
   # TODO 3: เพิ่ม rflutter alert package และ install โดยกด Pub get
 
-
+  rflutter_alert: ^2.0.4
 dev_dependencies:
   flutter_test:
     sdk: flutter
